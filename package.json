@@ -12,6 +12,11 @@
         "prepare": "husky"
     },
     "dependencies": {
+        "@emotion/react": "^11.13.5",
+        "@emotion/styled": "^11.13.5",
+        "@mui/icons-material": "^6.1.10",
+        "@mui/material": "^6.1.10",
+        "@toolpad/core": "^0.10.0",
         "animejs": "^3.2.2",
         "autoprefixer": "^10.4.20",
         "husky": "^9.1.7",
