@@ -4,21 +4,22 @@ import { Navigation } from '@toolpad/core';
 import { Box, Typography } from '@mui/material';
 import { useDemoRouter } from '@toolpad/core/internal';
 import { Home, Settings } from '@mui/icons-material';
-
-const navigation: Navigation = [
-    {
-        segment: 'home',
-        title: 'Home',
-        icon: <Home />,
-    },
-    {
-        segment: 'setting',
-        title: 'Setting',
-        icon: <Settings />,
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 function App() {
+    const { t } = useTranslation();
+    const navigation: Navigation = [
+        {
+            segment: 'home',
+            title: t('Home'),
+            icon: <Home />,
+        },
+        {
+            segment: 'setting',
+            title: t('Setting'),
+            icon: <Settings />,
+        },
+    ];
     const router = useDemoRouter('/home');
     return (
         <AppProvider
@@ -31,7 +32,9 @@ function App() {
         >
             <DashboardLayout>
                 <Box>
-                    <Typography>{router.pathname}</Typography>
+                    <Typography>
+                        {t('Setting')} {router.pathname}
+                    </Typography>
                 </Box>
             </DashboardLayout>
         </AppProvider>
